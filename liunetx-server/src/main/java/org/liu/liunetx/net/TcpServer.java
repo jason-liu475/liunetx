@@ -6,6 +6,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.SneakyThrows;
 
@@ -13,7 +14,7 @@ public class TcpServer {
     private Channel channel;
 
     @SneakyThrows
-    public synchronized void bind(int port, ChannelInitializer channelInitializer){
+    public synchronized void bind(int port, ChannelInitializer<SocketChannel> channelInitializer){
         EventLoopGroup boosGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {

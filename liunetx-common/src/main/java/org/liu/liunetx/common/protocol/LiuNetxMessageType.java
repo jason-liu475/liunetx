@@ -9,6 +9,7 @@ import org.liu.liunetx.common.exception.LiuNetxException;
  */
 @AllArgsConstructor
 public enum LiuNetxMessageType {
+    DEFAULT(0),
     REGISTER(1),
     REGISTER_RESULT(2),
     CONNECTED(3),

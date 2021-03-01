@@ -43,7 +43,7 @@ public class LiuNetxServerHandler extends LiuNetxCommonHandler {
             }else if(message.getType() == LiuNetxMessageType.DATA){
                 processData(message);
             }else if(message.getType() == LiuNetxMessageType.KEEPALIVE){
-                log.info("heartbeat request,channelId:{}",message.getMetaData().get("channelId"));
+                log.info("heartbeat request,channelId:{}",message.getMetaData().getStr("channelId"));
             }else{
                 throw new LiuNetxException("Unknown type:" + message.getType());
             }

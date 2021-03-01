@@ -5,7 +5,7 @@ import org.apache.commons.cli.*;
 import org.liu.liunetx.server.LiuNetxServer;
 
 @Slf4j
-public class LiuNetxMain {
+public class LiuNetxServerMain {
     public static void main(String[] args) throws Exception {
         Options options = new Options();
         options.addOption("h",false,"Help");
