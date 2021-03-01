@@ -87,6 +87,7 @@ public class LiuNetxServerHandler extends LiuNetxCommonHandler {
             }catch (Exception e){
                 resultObject.put("success",false);
                 resultObject.put("reason",e.getMessage());
+                log.info("Register fail,on port:{}",port);
                 log.error("some exception occur",e);
             }
         }
