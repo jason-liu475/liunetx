@@ -1,17 +1,19 @@
 package org.liu.liunetx.client;
 
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.timeout.IdleStateHandler;
-import lombok.extern.slf4j.Slf4j;
 import org.liu.liunetx.common.codec.LiuNetxMessageDecode;
 import org.liu.liunetx.common.codec.LiuNetxMessageEncode;
 import org.liu.liunetx.handler.LiuNetxClientHandler;
 import org.liu.liunetx.net.TcpConnection;
-@Slf4j
+
 public class LiuNetxClient {
+    Log log = LogFactory.get();
     public void connect(String serverHost,int serverPort,String password,int remotePort,String proxyAddress,int proxyPort) throws Exception{
         TcpConnection connection = new TcpConnection();
         ChannelFuture future = connection.connect(serverHost, serverPort, new ChannelInitializer<SocketChannel>() {

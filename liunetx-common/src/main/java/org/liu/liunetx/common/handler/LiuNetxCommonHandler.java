@@ -1,10 +1,11 @@
 package org.liu.liunetx.common.handler;
 
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
-import lombok.extern.slf4j.Slf4j;
 import org.liu.liunetx.common.protocol.LiuNetxMessage;
 import org.liu.liunetx.common.protocol.LiuNetxMessageType;
 
@@ -12,8 +13,8 @@ import org.liu.liunetx.common.protocol.LiuNetxMessageType;
 /**
  * @author liu
  */
-@Slf4j
 public class LiuNetxCommonHandler extends ChannelInboundHandlerAdapter {
+    Log log = LogFactory.get();
     protected ChannelHandlerContext ctx;
 
     public ChannelHandlerContext getCtx(){

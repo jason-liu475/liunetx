@@ -1,12 +1,13 @@
 package org.liu.liunetx.handler;
 
 import cn.hutool.json.JSONObject;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.liu.liunetx.api.*;
 import org.liu.liunetx.common.exception.LiuNetxException;
 import org.liu.liunetx.common.handler.LiuNetxCommonHandler;
@@ -17,8 +18,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 @Data
-@Slf4j
 public class LiuNetxClientHandler extends LiuNetxCommonHandler {
+    Log log = LogFactory.get();
     private int port;
     private String password;
     private String proxyAddress;

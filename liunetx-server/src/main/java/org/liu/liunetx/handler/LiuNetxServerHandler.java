@@ -1,6 +1,8 @@
 package org.liu.liunetx.handler;
 
 import cn.hutool.json.JSONObject;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.group.ChannelGroup;
@@ -9,7 +11,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.bytes.ByteArrayDecoder;
 import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import io.netty.util.concurrent.GlobalEventExecutor;
-import lombok.extern.slf4j.Slf4j;
 import org.liu.liunetx.common.exception.LiuNetxException;
 import org.liu.liunetx.common.handler.LiuNetxCommonHandler;
 import org.liu.liunetx.common.protocol.LiuNetxMessage;
@@ -18,8 +19,9 @@ import org.liu.liunetx.net.TcpServer;
 
 import java.util.Objects;
 
-@Slf4j
+
 public class LiuNetxServerHandler extends LiuNetxCommonHandler {
+    Log log = LogFactory.get();
     private TcpServer remoteConnectionServer = new TcpServer();
 
     private static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);

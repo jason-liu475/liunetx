@@ -1,11 +1,13 @@
 package org.liu.liunetx;
 
-import lombok.extern.slf4j.Slf4j;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import org.apache.commons.cli.*;
 import org.liu.liunetx.server.LiuNetxServer;
 
-@Slf4j
+
 public class LiuNetxServerMain {
+    static Log log = LogFactory.get();
     public static void main(String[] args) throws Exception {
         Options options = new Options();
         options.addOption("h",false,"Help");

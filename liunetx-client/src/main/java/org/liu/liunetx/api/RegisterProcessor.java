@@ -1,11 +1,13 @@
 package org.liu.liunetx.api;
 
-import lombok.extern.slf4j.Slf4j;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import org.liu.liunetx.common.protocol.LiuNetxMessage;
 import org.liu.liunetx.common.protocol.LiuNetxMessageType;
 import org.liu.liunetx.handler.LiuNetxClientHandler;
-@Slf4j
+
 public class RegisterProcessor implements ClientProcessor {
+    Log log = LogFactory.get();
     @Override
     public LiuNetxMessageType getType() {
         return LiuNetxMessageType.REGISTER;
